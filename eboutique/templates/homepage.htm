@@ -1,0 +1,125 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Shop Homepage</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet">
+
+</head>
+{% block content %}
+
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand align-start" href="{% url 'home' %}">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active mx-5">
+            <a class="nav-link" href="{% url 'boutique' %}">Boutique
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item mx-5">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item mx-5">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item mx-5">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Page Content -->
+  <div class="container mx-5">
+
+    <div class="row">
+
+      <div class=" col-lg-8">
+
+        <h1 class="my-4">Sunset</h1>
+        <div class="list-group">
+
+
+        </div class="color-block mb-3 mx-auto rounded-circle z-depth-1">
+        {% for collection in collections %}
+
+        <a href="#" class="list-group-item ma-3">{{ collection.name }}</a>
+        {% endfor %}
+
+      </div>
+    </div>
+    <!-- /.col-lg-3 -->
+
+
+    <div class="row">
+      <!--a for loop is require -->
+      <div class="col-lg-4 col-md-6 my-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top"
+              src="https://media.cdnws.com/_i/65167/12982/1906/86/marque-de-luxe-montre-quartz-en-cuir-femmes-dames-occasionnels-mode-bracelet-montre-bracelet-montres-horloge.jpeg "
+              alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title ">
+              <a href="#">yatch master</a>
+            </h4>
+            <h6>$64.99</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+            </p>
+          </div>
+
+
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white"></p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+{% endblock content %}
+
+</html>
