@@ -21,16 +21,19 @@ class materials(models.Model):
 class Bracelet(models.Model):
     name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.name
+
 
 class collection(models.Model):
     name = models.CharField(max_length=50)
-    #date = models.DateTimeField()
-    #available = models.BooleanField(default=False)
+    # date = models.DateTimeField()
+    # available = models.BooleanField(default=False)
 
 
 class watch(models.Model):
     name = models.CharField(max_length=50)
-    #collection = models.OneToOneField(collection, on_delete=models.CASCADE)
+    # collection = models.OneToOneField(collection, on_delete=models.CASCADE)
     description = models.TextField()
     discount_price = models.FloatField(blank=True, null=True)
     image = models.ImageField()
@@ -46,12 +49,18 @@ class watch(models.Model):
             'slug': self.slug
         })
 
+    def __str__(self):
+        return self.name
+
 
 class user(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
     cart = models.IntegerField()
     stripe_customer_id = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class order(models.Model):

@@ -63,61 +63,59 @@
       <div class=" col-lg-8">
 
         <h1 class="my-4">Sunset</h1>
-        <div class="list-group">
+
+        <!-- /.col-lg-3 -->
+        <div id="example">
+          <p>[[ hello ]]</p>
+        </div>
+
+        <script>
+          new Vue({
+            el: '#example',
+            delimiters: ['[[', ']]'],
+            data: { hello: 'Hello World!' }
+          })
+        </script>
 
 
-        </div class="color-block mb-3 mx-auto rounded-circle z-depth-1">
-        {% for collection in collections %}
+        <div class="row">
+          <!--a for loop is require -->
+          <div class="col-lg-4 col-md-6 my-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://172.25.0.1:8084/SUNSET/SERVER/static/IMG_2243.jpg"
+                  alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title ">
+                  <a href="#">yatch master</a>
+                </h4>
+                <h6>$64.99</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                </p>
+              </div>
 
-        <a href="#" class="list-group-item ma-3">{{ collection.name }}</a>
-        {% endfor %}
-
-      </div>
-    </div>
-    <!-- /.col-lg-3 -->
 
 
-    <div class="row">
-      <!--a for loop is require -->
-      <div class="col-lg-4 col-md-6 my-4">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top"
-              src="https://media.cdnws.com/_i/65167/12982/1906/86/marque-de-luxe-montre-quartz-en-cuir-femmes-dames-occasionnels-mode-bracelet-montre-bracelet-montres-horloge.jpeg "
-              alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title ">
-              <a href="#">yatch master</a>
-            </h4>
-            <h6>$64.99</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
-            </p>
+            </div>
+            <!-- /.row -->
+
           </div>
-
-
+          <!-- /.col-lg-9 -->
 
         </div>
         <!-- /.row -->
 
       </div>
-      <!-- /.col-lg-9 -->
+      <!-- /.container -->
 
-    </div>
-    <!-- /.row -->
+      <!-- Footer -->
 
-  </div>
-  <!-- /.container -->
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white"></p>
-    </div>
-    <!-- /.container -->
-  </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+      <!-- <script src="{% static 'https://cdn.jsdelivr.net/npm/vue@2.6.0' %}"></script> -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
 {% endblock content %}
